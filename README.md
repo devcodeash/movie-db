@@ -35,4 +35,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `yarn serve`
 
-Starts the production app
+Runs the JSON api server
+
+[Live demo](https://ash-movie-db.herokuapp.com)
