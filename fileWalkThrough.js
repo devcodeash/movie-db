@@ -66,6 +66,8 @@ async function prepareJSON(files) {
     };
 
     await fs.writeFile('db.json', JSON.stringify(db));
+
+    console.table(db.movies);
   } catch (error) {
     console.error(error);
   } finally {
