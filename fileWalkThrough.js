@@ -61,6 +61,7 @@ async function prepareJSON(files) {
     const files = await walk(folderPath);
     const array = await prepareJSON(files);
 
+    console.log(files)
     const db = {
       movies: array,
     };
