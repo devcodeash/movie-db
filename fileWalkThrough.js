@@ -61,13 +61,14 @@ async function prepareJSON(files) {
     const files = await walk(folderPath);
     const array = await prepareJSON(files);
 
-    console.log(files)
     const db = {
       movies: array,
     };
 
     await fs.writeFile('db.json', JSON.stringify(db));
 
+    console.log(`Total files scanned: ${files.length}`);
+    console.log(`Total movies found: ${db.movies.length}`);
     console.table(db.movies);
   } catch (error) {
     console.error(error);
