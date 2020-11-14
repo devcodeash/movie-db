@@ -1,13 +1,42 @@
 import * as React from 'react';
-import { List, Datagrid, TextField } from 'react-admin';
+import {
+  List,
+  Datagrid,
+  TextField,
+  Filter,
+  TextInput,
+  SelectInput,
+} from 'react-admin';
 import Movie from '@material-ui/icons/Movie';
 
 export const MovieIcon = Movie;
 
+const MovieFilter = (props) => (
+  <Filter {...props}>
+    <TextInput label="Search" source="q" alwaysOn />
+    <TextInput label="Year" source="year" alwaysOn />
+    <SelectInput
+      source="language"
+      choices={[
+        { id: 'English', name: 'English' },
+        { id: 'Tamil', name: 'Tamil' },
+        { id: 'Malayalam', name: 'Malayalam' },
+        { id: 'Hindi', name: 'Hindi' },
+        { id: 'Others', name: 'Others' },
+      ]}
+      alwaysOn
+    />
+  </Filter>
+);
+
 export const MovieList = (props) => (
-  <List {...props}>
+  <List
+    {...props}
+    filters={<MovieFilter />}
+    sort={{ field: 'year', order: 'DESC' }}
+    perPage={25}
+  >
     <Datagrid>
-      <TextField source="id" />
       <TextField source="title" />
       <TextField source="language" />
       <TextField source="year" />
