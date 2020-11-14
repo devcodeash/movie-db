@@ -19,8 +19,8 @@ const MovieFilter = (props) => (
       source="language"
       choices={[
         { id: 'English', name: 'English' },
-        { id: 'Tamil', name: 'Tamil' },
         { id: 'Malayalam', name: 'Malayalam' },
+        { id: 'Tamil', name: 'Tamil' },
         { id: 'Hindi', name: 'Hindi' },
         { id: 'Others', name: 'Others' },
       ]}
