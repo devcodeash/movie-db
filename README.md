@@ -1,6 +1,6 @@
 # movie-db
 
-My personal movie collection
+Movie collection
 
 # Getting Started with Create React App
 
